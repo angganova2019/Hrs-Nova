@@ -1,10 +1,13 @@
 package com.nova.hrs.entity;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class MyUserDetails implements UserDetails {
 
@@ -13,33 +16,50 @@ public class MyUserDetails implements UserDetails {
     private boolean active;
     private List<GrantedAuthority> authorities;
 
-    public MyUserDetails(User user) {
-        this.userName = user.getEmail;
-        this.password = user.password;
+    public MyUserDetails(Pengguna user) {
+        this.userName = user.getEmail();
+        this.password = user.getPassword();
         this.active = user.isActive();
-        this.authorities = authorities;
+        this.authorities = Arrays.stream(user.getRoles().split(","))
+                            .map(SimpleGrantedAuthority::new)
+                            .collect(Collectors.toList());
     }
 
     public MyUserDetails() {
     }
 
     @Override
+    public Collection<? extends GrantedAuthority> getAuthorities() {
+        return authorities;
+    }
+
+    @Override
+    public String getPassword() {
+        return password;
+    }
+
+    @Override
+    public String getUsername() {
+        return userName;
+    }
+
+    @Override
     public boolean isAccountNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isAccountNonLocked() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isCredentialsNonExpired() {
-        return false;
+        return true;
     }
 
     @Override
     public boolean isEnabled() {
-        return false;
+        return active;
     }
 }
