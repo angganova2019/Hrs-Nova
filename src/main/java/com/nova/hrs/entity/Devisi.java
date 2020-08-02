@@ -4,6 +4,7 @@ import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Data
 @Entity
@@ -16,8 +17,8 @@ public class Devisi {
     @ManyToOne
     @JoinColumn(name = "id_kantor")
     private Kantor kantor;
-    @Column(length = 45)
+    @Size(min = 2, max = 45)
     private String nama;
-    @Column(length = 4)
+    @Column(columnDefinition = "Numeric(4)")
     private int urutan;
 }

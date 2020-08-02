@@ -26,14 +26,24 @@ public class Karyawan {
     private Kantor kantor;
 
     @NotNull
+    @ManyToOne
+    @JoinColumn(name = "id_devisi")
+    private Devisi devisi;
+
+    @Column(length = 25)
     private String nip;
-    @NotNull
+    @Size(min = 14, max = 20)
     private String ktp;
+    @Size(min = 1,max = 50)
     private String firstName;
+    @Size(min = 2, max = 150)
     private String lastName;
+    @Column(length = 1)
     private String jenisKelamin;
+    @Column(length = 45)
     private String tempatLahir;
     private LocalDate tglLahir;
+    @Column(length = 10)
     private String agama;
     private String alamatTinggal;
     private String alamatKtp;

@@ -18,7 +18,9 @@ public class Kantor {
     @GeneratedValue(generator = "uuid" )
     @GenericGenerator(name = "uuid", strategy = "uuid2")
     private String id;
+    @Size(min = 3, max = 255)
     private String nama;
+    @Size(min = 3, max = 255)
     private String alamat;
     @Column(length = 150)
     private String telp;
