@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Karyawan</title>
+</head>
+<body>
+<section layout:fragment="content_header">
+    <div class="row mb-2">
+        <div class="col-sm-6">
+            <h1 class="m-0 text-dark">
+                Karyawan
+            </h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+                <li class="breadcrumb-item active">Karyawan</li>
+            </ol>
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</section>
+<section layout:fragment="content">
+    <h1>Halaman Karyawan</h1>
+</section>
+
+</body>
+</html>
