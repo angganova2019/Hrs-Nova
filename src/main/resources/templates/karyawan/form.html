@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Karyawan</title>
+</head>
+<body>
+<section layout:fragment="content_header">
+    <div class="row mb-2">
+        <div class="col-sm-6">
+            <h1 class="m-0 text-dark">
+                Form Karyawan
+            </h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+                <li class="breadcrumb-item"><a th:href="@{/karyawan}">Karyawan</a></li>
+                <li class="breadcrumb-item active">Form</li>
+            </ol>
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</section>
+<section layout:fragment="content">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="card card-primary">
+                <form role="form" th:object="${karyawan}" method="post">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="ktp">No KTP</label>
+                                    <input type="text" class="form-control" th:field="*{ktp}" id="ktp">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="npwp">NPWP</label>
+                                    <input type="text" class="form-control" th:field="*{npwp}" id="npwp">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="firstname">Nama Depan</label>
+                                    <input type="text" class="form-control" th:field="*{firstName}" id="firstname">
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="form-group">
+                                    <label for="lastname">Nama Belakang</label>
+                                    <input type="text" class="form-control" th:field="*{lastName}" id="lastname">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="form-group">
+                                    <label for="tempatLahir">Tempat Lahir</label>
+                                    <input type="text" class="form-control" th:field="*{tempatLahir}" id="tempatLahir">
+                                </div>
+                            </div>
+                            <div class="col-sm-8">
+                                <!-- Date dd/mm/yyyy -->
+                                <div class="form-group">
+                                    <label>Date masks:</label>
+
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="far fa-calendar-alt"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" data-inputmask-alias="datetime" data-inputmask-inputformat="dd/mm/yyyy" data-mask>
+                                    </div>
+                                    <!-- /.input group -->
+                                </div>
+                                <!-- /.form group -->
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="jenisKelamin">Jenis Kelamin</label>
+                                    <input type="text" class="form-control" th:field="*{jenisKelamin}" id="jenisKelamin">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Agama</label>
+                                    <select class="form-control">
+                                        <option>Islam</option>
+                                        <option>Kristen</option>
+                                        <option>Katolik</option>
+                                        <option>Hindu</option>
+                                        <option>Budha</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="alamatKtp">Alamat KTP</label>
+                                    <input type="text" class="form-control" th:field="*{alamatKtp}" id="alamatKtp">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="alamatTinggal">Alamat Tinggal</label>
+                                    <input type="text" class="form-control" th:field="*{alamatTinggal}" id="alamatTinggal">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Status Tempat Tinggal</label>
+                                    <select class="form-control">
+                                        <option>Milik Sendiri</option>
+                                        <option>Orang Tua</option>
+                                        <option>Saudara</option>
+                                        <option>Sewa</option>
+                                        <option>Kontrak</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label>Status Menikah</label>
+                                    <select class="form-control">
+                                        <option>Belum Menikah</option>
+                                        <option>Menikah</option>
+                                        <option>Duda</option>
+                                        <option>Janda</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="hp">No Handphone</label>
+                                    <input type="text" class="form-control" th:field="*{hp}" id="hp">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="jumlahSaudara">Jumlah Saudara</label>
+                                    <input type="text" class="form-control" th:field="*{jumlahSaudara}" id="jumlahSaudara">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="ayah">Nama Ayah</label>
+                                    <input type="text" class="form-control" th:field="*{ayah}" id="ayah">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="ibu">Nama Ibu</label>
+                                    <input type="text" class="form-control" th:field="*{ibu}" id="ibu">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label for="infoLain">Info Lain</label>
+                                    <input type="text" class="form-control" th:field="*{infoLain}" id="infoLain">
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-primary">Simpan</button>
+                        <button type="submit" class="btn btn-default float-right">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+<p layout:fragment="content_script">
+    <!-- InputMask -->
+    <script th:src="@{/plugins/moment/moment.min.js}"></script>
+    <script th:src="@{/plugins/inputmask/min/jquery.inputmask.bundle.min.js}"></script>
+
+    <script>
+        $(function () {
+            $('#datemask').inputmask('dd/mm/yyyy', { 'placeholder': 'dd/mm/yyyy' })
+            $('[data-mask]').inputmask()
+        })
+    </script>
+</p>
+</body>
+</html>

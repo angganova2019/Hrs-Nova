@@ -26,4 +26,10 @@ public class KaryawanController {
         model.addAttribute("listKaryawan", listKry);
         return "karyawan/index";
     }
+
+    @GetMapping("/add")
+    public String add(Model model) {
+        model.addAttribute("karyawan", new Karyawan());
+        return "karyawan/form";
+    }
 }
