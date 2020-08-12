@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Pengaturan</title>
+</head>
+<body>
+<section layout:fragment="content_header">
+    <div class="row mb-2">
+        <div class="col-sm-6">
+            <h1 class="m-0 text-dark">
+                Pengaturan
+            </h1>
+        </div><!-- /.col -->
+        <div class="col-sm-6">
+            <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a th:href="@{/}">Home</a></li>
+                <li class="breadcrumb-item active">Pengaturan</li>
+            </ol>
+        </div><!-- /.col -->
+    </div><!-- /.row -->
+</section>
+<section layout:fragment="content">
+    <div class="card card-primary card-outline">
+        <div class="card-header">
+            <div class="card-title"><a class="btn btn-primary" th:href="@{/karyawan/add}">Tambah</a></div>
+        </div>
+        <div class="card-body">
+            <table id="example1" class="table table-striped">
+                <thead>
+                <tr>
+                    <th>Rendering engine</th>
+                    <th>Browser</th>
+                    <th>Platform(s)</th>
+                    <th>Engine version</th>
+                    <th>CSS grade</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Trident</td>
+                    <td>Internet
+                        Explorer 4.0
+                    </td>
+                    <td>Win 95+</td>
+                    <td> 4</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>Trident</td>
+                    <td>Internet
+                        Explorer 5.0
+                    </td>
+                    <td>Win 95+</td>
+                    <td>5</td>
+                    <td>C</td>
+                </tr>
+                <tr>
+                    <td>Trident</td>
+                    <td>Internet
+                        Explorer 5.5
+                    </td>
+                    <td>Win 95+</td>
+                    <td>5.5</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>Trident</td>
+                    <td>Internet
+                        Explorer 6
+                    </td>
+                    <td>Win 98+</td>
+                    <td>6</td>
+                    <td>A</td>
+                </tr>
+                <tr>
+                    <td>Trident</td>
+                    <td>Internet Explorer 7</td>
+                    <td>Win XP SP2+</td>
+                    <td>7</td>
+                    <td>A</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+</body>
+</html>
